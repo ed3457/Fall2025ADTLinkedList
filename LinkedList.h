@@ -18,7 +18,12 @@ private:
     
 public:
 	void insertAtStart(int newelement);
+	void insertAtEnd(int newelement);
 	void printList();
+	bool searchForItem(int item); 
+	int sumTheList();
+	int getSize();
+	bool isEmpty(); 
 	LinkedList();
 
 };

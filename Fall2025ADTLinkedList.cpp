@@ -14,7 +14,13 @@ int main()
 	list1.insertAtStart(7);
 	//[7,1,2,5]
 
+	list1.insertAtEnd(20);
+
+	//[7,1,2,5,20]
+
 	list1.printList();
+
+	cout << list1.searchForItem(10) << endl;
 
 }
 
