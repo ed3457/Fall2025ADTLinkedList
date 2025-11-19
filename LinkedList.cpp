@@ -74,6 +74,62 @@ void LinkedList::insertAtIndex(int index, int newelement)
 
 }
 
+void LinkedList::deleteFirst()
+{
+	// step0: validation
+	if (isEmpty())
+	throw 1; // list is empty 
+
+	// step1: create a pointer to the head 
+	node* temp = head;
+
+	// step2: move the head to head->next
+	head = head->next;
+
+	// step3: delete the temp node
+	delete temp; 
+
+	// step4: decrease the size
+	size--;
+}
+
+void LinkedList::deleteAtIndex(int index)
+{
+	//step0: check for the index 
+	if (index <0 || index>size - 1)
+		throw 0;// index out of range 
+
+	if (index == 0)
+	{
+		deleteFirst();
+		return;
+	}
+
+	// step1: create a temp pointer that points to the head
+	node* temp = head;
+
+	// step2: loop until you get to index-1 
+	int counter = 0;
+	while (counter != index - 1)
+	{
+		temp = temp->next; // move to the next node 
+		counter++;
+	}
+    // step3: create a pointer to the node we want to delete
+	node* temp2 = temp->next;
+
+	// step4: arrange the pointers
+	//temp->next = temp->next->next;
+	temp->next = temp2->next;
+
+	// step5: delete temp2
+	delete temp2;
+
+	// step6: decrease the size
+	size--;
+
+}
+
 void LinkedList::printList()
 {
 	// step1: create a temp pointer that points to the head

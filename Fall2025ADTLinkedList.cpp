@@ -22,6 +22,16 @@ int main()
 
 	//[7,1,500,2,5,20]
 
+	list1.deleteFirst();
+	list1.deleteFirst();
+	//[500,2,5,20]
+
+	list1.deleteAtIndex(1);
+	//[500,5,20]
+
+	list1.deleteAtIndex(2);
+	//[500,5]
+
 	list1.printList();
 
 	//cout << list1.searchForItem(10) << endl;
