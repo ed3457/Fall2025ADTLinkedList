@@ -39,6 +39,41 @@ void LinkedList::insertAtEnd(int newelement)
 	//TODO: add a tail pointer 
 }
 
+void LinkedList::insertAtIndex(int index, int newelement)
+{
+	//step0: check for the index 
+	if (index <0 || index>size - 1)
+		throw 0;// index out of range 
+
+	if (index == 0)
+	{
+		insertAtStart(newelement);
+		return;
+	}
+
+	// step1: create a temp pointer that points to the head
+	node* temp = head;
+	// step2: loop until you get to index-1 
+	int counter = 0;
+	while (counter!=index-1)
+	{
+		temp = temp->next; // move to the next node 
+		counter++;
+	}
+
+	// step3: create a new node 
+	node* newNode = new node();
+	newNode->info = newelement;
+	newNode->next = nullptr;
+	// step4: adjust the pointer 
+	newNode->next = temp->next;
+	temp->next = newNode;
+	// step5: increment the size
+	size++;
+
+
+}
+
 void LinkedList::printList()
 {
 	// step1: create a temp pointer that points to the head

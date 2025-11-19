@@ -19,6 +19,10 @@ private:
 public:
 	void insertAtStart(int newelement);
 	void insertAtEnd(int newelement);
+	void insertAtIndex(int index, int newelement);
+	void deleteAtStart();
+	void deleteAtIndex(int index);
+	//void deleteLast(); lab 
 	void printList();
 	bool searchForItem(int item); 
 	int sumTheList();

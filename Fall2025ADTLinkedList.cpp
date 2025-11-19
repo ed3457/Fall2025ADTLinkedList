@@ -18,9 +18,13 @@ int main()
 
 	//[7,1,2,5,20]
 
+	list1.insertAtIndex(2, 500);
+
+	//[7,1,500,2,5,20]
+
 	list1.printList();
 
-	cout << list1.searchForItem(10) << endl;
+	//cout << list1.searchForItem(10) << endl;
 
 }
 
